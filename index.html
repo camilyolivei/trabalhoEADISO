@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Educacional - Usabilidade na ISO/IEC 25010</title>
+    <!-- Importação da fonte Inter para um visual moderno e profissional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main_container">
+        <!-- Seção da Vídeo Aula (Lado Esquerdo) -->
+        <aside class="video_section">
+            <div class="video_header">
+                <span class="badge">Vídeo Aula</span>
+                <h1>Usabilidade na ISO/IEC 25010</h1>
+            </div>
+            <div class="video_wrapper">
+                <iframe
+    class="videoyt"
+    src="https://www.youtube.com/embed/phigW-l3rwc"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+></iframe>
+            </div>
+            <div class="video_footer">
+                <p>Assista ao vídeo para reforçar os conceitos de Usabilidade na ISO/IEC 25010 antes ou durante o quiz.</p>
+            </div>
+        </aside>
+
+        <!-- Seção do Quiz (Lado Direito) -->
+        <main class="quiz_section">
+            <div class="quiz_container">
+                <!-- Tela de Início -->
+                <div id="startScreen" class="screen active">
+                    <div class="card start_card">
+                        <h1>Teste seu Conhecimento</h1>
+                        <p class="subtitle">Usabilidade na ISO/IEC 25010</p>
+                        <div class="quiz_meta">
+                            <div class="meta_item"><span>10</span> Questões</div>
+                            <div class="meta_item"><span>Focado</span> Usabilidade</div>
+                        </div>
+                        <button id="startBtn" class="btn btn_primary btn_lg">Iniciar Quiz Agora</button>
+                    </div>
+                </div>
+
+                <!-- Tela do Quiz -->
+                <div id="quizScreen" class="screen">
+                    <div class="quiz_header">
+                        <div class="progress_info">
+                            <span id="progressText">Questão 1 de 10</span>
+                            <span id="percentageText">0% concluído</span>
+                        </div>
+                        <div class="progress_bar">
+                            <div id="progressFill" class="progress_fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="question_container">
+                        <div class="card question_card">
+                            <h2 id="questionText">Carregando pergunta...</h2>
+                        </div>
+
+                        <div id="optionsWrapper" class="options_grid">
+                            <!-- Opções inseridas via JS -->
+                        </div>
+                    </div>
+
+                    <div class="quiz_footer">
+                        <button id="prevBtn" class="btn btn_outline" disabled>Anterior</button>
+                        <button id="nextBtn" class="btn btn_primary">Próxima</button>
+                    </div>
+                </div>
+
+                <!-- Tela de Resultados -->
+                <div id="resultsScreen" class="screen">
+                    <div class="card results_card">
+                        <h1>Seu Desempenho</h1>
+                        <div class="score_overview">
+                            <div class="score_circle">
+                                <span id="scorePercentage">0%</span>
+                                <small>Acertos</small>
+                            </div>
+                            <div class="score_text">
+                                <p>Você acertou <strong id="scoreCount">0</strong> de <strong>10</strong> questões.</p>
+                                <p id="scoreMessage" class="message_box"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="review_section">
+                            <h3>Revisão Detalhada</h3>
+                            <div id="resultsWrapper" class="results_list">
+                                <!-- Revisão inserida via JS -->
+                            </div>
+                        </div>
+
+                        <div class="results_actions">
+                            <button id="restartBtn" class="btn btn_primary btn_lg">Refazer Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
